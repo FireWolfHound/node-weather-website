@@ -19,7 +19,7 @@ module.exports = {
 			}else if (body.error){
 				callback('Error ' + body.code + ': ' + body.error, undefined)
 			}else {
-				callback(undefined, body.daily.data[0].summary + ' Il fait actuellement ' + body.currently.temperature + '°C dehors. Il y a ' + body.currently.precipProbability + '% de chance qu\'il pleuve')
+				callback(undefined, body.daily.data[0].summary + ' Il fait actuellement <strong>' + body.currently.temperature + '°C</strong> dehors. La température maximal prévu est de <strong>' + body.daily.data[0].temperatureHigh + '°C</strong> et la température minimale est de <strong>' + body.daily.data[0].temperatureLow + '°C</strong>. Il y a <strong>' + body.currently.precipProbability + '%</strong> de chance qu\'il pleuve.')
 			}
 		})
 	}
